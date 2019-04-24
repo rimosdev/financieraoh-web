@@ -1,0 +1,48 @@
+
+
+<form [formGroup]="accountDetailsForm" (submit)="onFormSubmit(accountDetailsForm.value)">
+  <div class="container">
+    <div class="row c-card">
+      <h2 class="col-12">Datos</h2>
+      
+      <div class="col-md-6 tw-input-box">
+        <label>Nombre</label>
+        <input name="customer_name" formControlName="customer_name"
+              placeholder="Ejemmplo: Juan">
+        <!-- <div class="error" *ngFor="let validation of validation_messages.customer_name">
+          <div class="error-message" *ngIf="accountDetailsForm.get('customer_name').hasError(validation.type) && (accountDetailsForm.get('customer_name').dirty || accountDetailsForm.get('customer_name').touched)">{{validation.message}}</div>
+        </div> -->
+      </div>
+      
+      <div class="col-md-6 tw-input-box">
+        <label>Apellidos</label>
+        <input name="customer_lastname" formControlName="customer_lastname"
+              placeholder="Ejemmplo: Juan">
+        <!-- <div class="error" *ngFor="let validation of validation_messages.customer_lastname">
+          <div class="error-message" *ngIf="accountDetailsForm.get('customer_lastname').hasError(validation.type) && (accountDetailsForm.get('customer_lastname').dirty || accountDetailsForm.get('customer_lastname').touched)">{{validation.message}}</div>
+        </div> -->
+      </div>
+      
+      <div class="col-md-6 tw-input-box">
+        <label>Edad</label>
+        <input name="customer_age" formControlName="customer_age"
+              placeholder="Ejemmplo: Juan">
+        <!-- <div class="error" *ngFor="let validation of validation_messages.customer_age">
+          <div class="error-message" *ngIf="accountDetailsForm.get('customer_age').hasError(validation.type) && (accountDetailsForm.get('customer_age').dirty || accountDetailsForm.get('customer_age').touched)">{{validation.message}}</div>
+        </div> -->
+      </div>
+      
+      <div class="col-md-6 tw-input-box">
+        <label>Fecha de nacimiento</label>
+        <input name="customer_birthday" formControlName="customer_birthday"
+              placeholder="Ejemmplo: Juan">
+        <!-- <div class="error" *ngFor="let validation of validation_messages.customer_birthday">
+          <div class="error-message" *ngIf="accountDetailsForm.get('customer_birthday').hasError(validation.type) && (accountDetailsForm.get('customer_birthday').dirty || accountDetailsForm.get('customer_birthday').touched)">{{validation.message}}</div>
+        </div> -->
+      </div>
+
+      <button type="submit" (click)="onFormSubmit(accountDetailsForm.value)">Registrar</button>
+
+    </div>
+  </div>
+</form>
