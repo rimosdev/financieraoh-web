@@ -1,0 +1,13 @@
+.row {
+    height: calc(100vh - 98px);
+}
+.button-home {
+    display: flex;
+    background: #ccc;
+    color: #4d4d4d;
+    min-height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}

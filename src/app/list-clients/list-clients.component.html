@@ -1,3 +1,31 @@
-<p>
-  list-clients works!
-</p>
+<div class="container">
+  <div class="row c-card">
+    <div class="col-sm-6">
+      <label>Edad promedio: </label>
+      <span>{{age_avg}} años</span>
+    </div>
+    <div class="col-sm-6">
+      <label>Desv. estándar: </label>
+      <span>{{age_std}}</span>
+    </div>
+    <h2 class="col-12">Listado de clientes</h2>
+
+    <table>
+      <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Fecha nacimiento</th>
+        <th>Fecha est. de muerte</th>
+      </thead>
+      <tr *ngFor="let customer of customers" >
+        <td>{{customer.name}}</td>
+        <td>{{customer.lastname}}</td>
+        <td>{{customer.age}}</td>
+        <td>{{customer.birthday}}</td>
+        <td>{{customer.to_die}}</td>
+      </tr>
+    </table>
+
+  </div>
+</div>

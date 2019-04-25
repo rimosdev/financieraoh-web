@@ -1,12 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <meta charset="utf-8">
   <title>FinancieraohWebTest</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBvSufp2aeg4aiMIursozKcfQ50KI5qiCI",
+      authDomain: "financieraoh-test.firebaseapp.com",
+      databaseURL: "https://financieraoh-test.firebaseio.com",
+      projectId: "financieraoh-test",
+      storageBucket: "financieraoh-test.appspot.com",
+      messagingSenderId: "579927974786"
+    };
+    firebase.initializeApp(config);
+  </script>
 </head>
 <body>
   <app-root></app-root>

@@ -7,41 +7,51 @@
       
       <div class="col-md-6 tw-input-box">
         <label>Nombre</label>
-        <input name="customer_name" formControlName="customer_name"
+        <input name="name" formControlName="name"
               placeholder="Ejemmplo: Juan">
-        <!-- <div class="error" *ngFor="let validation of validation_messages.customer_name">
-          <div class="error-message" *ngIf="accountDetailsForm.get('customer_name').hasError(validation.type) && (accountDetailsForm.get('customer_name').dirty || accountDetailsForm.get('customer_name').touched)">{{validation.message}}</div>
+        <!-- <div class="error" *ngFor="let validation of validation_messages.name">
+          <div class="error-message" *ngIf="accountDetailsForm.get('name').hasError(validation.type) && (accountDetailsForm.get('name').dirty || accountDetailsForm.get('name').touched)">{{validation.message}}</div>
         </div> -->
       </div>
       
       <div class="col-md-6 tw-input-box">
         <label>Apellidos</label>
-        <input name="customer_lastname" formControlName="customer_lastname"
+        <input name="lastname" formControlName="lastname"
               placeholder="Ejemmplo: Juan">
-        <!-- <div class="error" *ngFor="let validation of validation_messages.customer_lastname">
-          <div class="error-message" *ngIf="accountDetailsForm.get('customer_lastname').hasError(validation.type) && (accountDetailsForm.get('customer_lastname').dirty || accountDetailsForm.get('customer_lastname').touched)">{{validation.message}}</div>
+        <!-- <div class="error" *ngFor="let validation of validation_messages.lastname">
+          <div class="error-message" *ngIf="accountDetailsForm.get('lastname').hasError(validation.type) && (accountDetailsForm.get('lastname').dirty || accountDetailsForm.get('lastname').touched)">{{validation.message}}</div>
         </div> -->
       </div>
       
       <div class="col-md-6 tw-input-box">
         <label>Edad</label>
-        <input name="customer_age" formControlName="customer_age"
+        <input name="age" formControlName="age"
               placeholder="Ejemmplo: Juan">
-        <!-- <div class="error" *ngFor="let validation of validation_messages.customer_age">
-          <div class="error-message" *ngIf="accountDetailsForm.get('customer_age').hasError(validation.type) && (accountDetailsForm.get('customer_age').dirty || accountDetailsForm.get('customer_age').touched)">{{validation.message}}</div>
+        <!-- <div class="error" *ngFor="let validation of validation_messages.age">
+          <div class="error-message" *ngIf="accountDetailsForm.get('age').hasError(validation.type) && (accountDetailsForm.get('age').dirty || accountDetailsForm.get('age').touched)">{{validation.message}}</div>
         </div> -->
       </div>
       
       <div class="col-md-6 tw-input-box">
         <label>Fecha de nacimiento</label>
-        <input name="customer_birthday" formControlName="customer_birthday"
-              placeholder="Ejemmplo: Juan">
-        <!-- <div class="error" *ngFor="let validation of validation_messages.customer_birthday">
-          <div class="error-message" *ngIf="accountDetailsForm.get('customer_birthday').hasError(validation.type) && (accountDetailsForm.get('customer_birthday').dirty || accountDetailsForm.get('customer_birthday').touched)">{{validation.message}}</div>
+
+
+        <input  [matDatepicker]="picker" [matDatepickerFilter]="myFilter"
+                (click)="picker.open()" readonly placeholder="DD / MM / AAAA" formControlName="birthday">
+        <mat-datepicker #picker></mat-datepicker>
+        <!-- <div class="error" *ngFor="let validation of validation_messages.birthday">
+          <div class="error-message" *ngIf="accountDetailsForm.get('birthday').hasError(validation.type) && (accountDetailsForm.get('birthday').dirty || accountDetailsForm.get('birthday').touched)">{{validation.message}}</div>
         </div> -->
       </div>
 
-      <button type="submit" (click)="onFormSubmit(accountDetailsForm.value)">Registrar</button>
+      <div class="col-12 tw-input-box message m-success" *ngIf="message_success">{{ message_success }}</div>
+      <div class="col-12 tw-input-box message m-error" *ngIf="message_error">{{ message_error }}</div>
+
+      
+
+      <div class="col-12 tw-input-box tw-actions">
+        <button type="submit">Registrar</button><div class="loading" *ngIf="loading"><img src="./../../assets/images/loading.svg"></div>
+      </div>
 
     </div>
   </div>

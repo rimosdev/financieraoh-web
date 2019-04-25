@@ -8,6 +8,9 @@ import { ListClientsComponent } from './list-clients/list-clients.component';
 import { NewClientComponent } from './new-client/new-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MatDatepickerModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
